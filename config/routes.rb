@@ -9,4 +9,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  # The user will need to see the bookings of his items, this route will provide with the correct path.
+  get "my_bookings" => "bookings#my_bookings"
+
+  # The user
 end
