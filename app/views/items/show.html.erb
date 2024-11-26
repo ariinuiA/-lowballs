@@ -9,8 +9,5 @@
 <p>
   <strong>Price:</strong> <%= number_to_currency(@item.price.to_f / 100, unit: "$") %>
 </p>
-<p>
-  <strong>Status:</strong> <%= @item.status.capitalize %>
-</p>
 
 <%= link_to 'Back to Items', items_path %>
