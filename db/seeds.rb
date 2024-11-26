@@ -7,6 +7,12 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+
+Booking.destroy_all
+Item.destroy_all
+User.destroy_all
+
 User.create(first_name: "Jacob", last_name: "Nolose", email: "nolose@gmail.com", password: "123456", phone_number: "123")
 User.create(first_name: "Bella", last_name: "Ponel", email: "ponel@gmail.com", password: "123456", phone_number: "321")
 Item.create(title: "Monopoly", description: "A board game that can be played by 4-8 people", price: "500", user_id: 1)
