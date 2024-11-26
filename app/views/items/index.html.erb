@@ -1,0 +1,20 @@
+<h1>Items Listing</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @items.each do |item| %>
+      <tr>
+        <td><%= item.title %></td>
+        <td><%= item.description %></td>
+        <td><%= number_to_currency(item.price.to_f / 100, unit: "$") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
