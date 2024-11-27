@@ -1,0 +1,11 @@
+<div>
+<h3>Add a new item</h3>
+ <%= simple_form_for(@item) do |f| %>
+  <%= f.input :title, { class: "form-control" } %>
+  <%= f.input :description, { class: "form-control" } %>
+  <%= f.input :price, as: :integer, input_html: { min: 0, step: 1, class: "form-control" } %>
+
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
+
+</div>
