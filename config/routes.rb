@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  #get 'items/:id' => 'pages#show', as: 'item'
+  resources :items, only: [:index, :show]
 
 
   resources :items, only: %i[index show] do

@@ -14,6 +14,9 @@
         <td><%= item.title %></td>
         <td><%= item.description %></td>
         <td><%= number_to_currency(item.price.to_f / 100, unit: "$") %></td>
+        <td>
+          <%= link_to 'Item Details', item_path(item) %>
+        </td>
       </tr>
     <% end %>
   </tbody>
