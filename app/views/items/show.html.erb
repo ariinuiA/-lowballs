@@ -10,4 +10,5 @@
   <strong>Price:</strong> <%= number_to_currency(@item.price.to_f / 100, unit: "$") %>
 </p>
 
-<%= link_to 'Back to Items', items_path %>
+<%= link_to 'Back to Items', items_path %> |
+<%= link_to 'Book item', new_item_booking_path(@item) %>
