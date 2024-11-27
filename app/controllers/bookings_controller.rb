@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_item, only: %i[new create]
+  before_action :set_booking, only: %i[edit update]
 
   def my_bookings
   end
@@ -21,6 +22,14 @@ class BookingsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def edit
+  end
+
+  def update
+    @booking.update(booking_params)
+    redirect_to root_path(@booking)
   end
 
   private
