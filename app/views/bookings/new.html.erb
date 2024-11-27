@@ -1,0 +1,6 @@
+<%= simple_form_for [@item, @booking] do |f| %>
+  <%= f.input :booking_date, as: :date, label: "Booking Date" %>
+  <%= f.input :return_date, as: :date, label: "Return Date" %>
+
+  <%= f.button :submit, "Submit Booking" %>
+<% end %>
