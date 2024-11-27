@@ -12,3 +12,5 @@ class Booking < ApplicationRecord
     end
   end
 end
+
+# Make a method belongs to current-user -> posted-items -> posted items that are booked.

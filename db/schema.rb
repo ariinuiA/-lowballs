@@ -8,9 +8,8 @@
 # migrations from scratch. Old migrations may fail to apply correctly if those
 # migrations use external dependencies or application code.
 #
-# It's strongly recommended that you check this file into your version control system.
-
-ActiveRecord::Schema[7.1].define(version: 2024_11_26_202552) do
+# It's strongly recommended that you check this file into your version control system
+ActiveRecord::Schema[7.1].define(version: 2024_11_27_195334) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
