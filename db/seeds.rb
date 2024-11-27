@@ -22,5 +22,5 @@ item4 = Item.create(title: "Catan", description: "Cool game", price: "1000", use
 
 Booking.create(user_id: user1, item_id: item3)
 Booking.create(user_id: user1, item_id: item4)
-Booking.create(user_id: user1, item_id: item1)
-Booking.create(user_id: user1, item_id: item2)
+Booking.create(user_id: user2, item_id: item1)
+Booking.create(user_id: user2, item_id: item2)
