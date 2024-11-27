@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   # The user will need to see the bookings of his items, this route will provide with the correct path.
   get "my_bookings" => "bookings#my_bookings"
 
-  # The user
+  # The user will need to see the items that he has rented from other people, this route will provide the user with the correct path.
+  get "my_rented_items" => "bookings#my_rented_items"
 end
