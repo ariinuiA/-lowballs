@@ -12,8 +12,9 @@ Rails.application.routes.draw do
   #get 'items/:id' => 'pages#show', as: 'item'
   resources :items, only: [:index, :show]
 
-
   resources :items, only: %i[index show] do
     resources :bookings, only: %i[new create]
   end
+
+  resources :bookings, only: %i[edit update]
 end
