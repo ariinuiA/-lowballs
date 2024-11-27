@@ -20,6 +20,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_11_27_195334) do
     t.bigint "item_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "booking_date"
+    t.date "return_date"
     t.index ["item_id"], name: "index_bookings_on_item_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
