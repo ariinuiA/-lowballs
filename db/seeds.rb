@@ -7,3 +7,23 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+# Items => title, description, price, user references
+# Users => first_name, last_name, email, password, phone_number
+# Booking => status, user and item references
+# FYI our items are boardgames
+
+Booking.destroy_all
+Item.destroy_all
+User.destroy_all
+
+User.create(first_name: "Jacob", last_name: "Nolose", email: "nolose@gmail.com", password: "123456", phone_number: "123")
+User.create(first_name: "Bella", last_name: "Ponel", email: "ponel@gmail.com", password: "123456", phone_number: "321")
+
+Item.create(title: "Monopoly", description: "A board game that can be played by 4-8 people", price: "500", user_id: 7)
+Item.create(title: "Battleship", description: "Battle against ", price: "100", user_id: 7)
+Item.create(title: "Connect 4", description: "Connect 4 to win", price: "400", user_id: 8)
+Item.create(title: "Catan", description: "Cool game", price: "1000", user_id: 8)
+
+Booking.create(user_id: 8, item_id: 1)
+Booking.create(user_id: 7, item_id: 3)
