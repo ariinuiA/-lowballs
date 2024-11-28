@@ -3,6 +3,8 @@ class Booking < ApplicationRecord
   belongs_to :item
   validate :item_not_owned_by_user
   validates :status, presence: true
+  validates :booking_date, presence: true
+  validates :return_date, presence: true
 
   private
 

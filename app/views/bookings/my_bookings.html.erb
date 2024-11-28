@@ -4,23 +4,32 @@
 just the items that were booked from other people. %>
 
 <%#   %>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <h1>My bookings</h1>
-  <ul>
-    <% @bookings.each do |booking| %>
-      <li><%= booking.item.title %></li>
-      <!--li><%= booking.item.description %></li-->
-      <li><%= booking.item.price %></li>
-    <% end %>
+<h1>My bookings</h1>
 
-  </ul>
 
-</body>
-</html>
+<div class="container d-flex flex-wrap justify-content-center align-items-center">
+  <% @bookings.each do |booking| %>
+    <div class="card-container">
+      <div class="card-title-section">
+        <div class="row-card-title-section-col-l">
+          <p><%= booking.item.title %></p>
+          <p>Renting date</p>
+          <p>start<%#= booking.booking_date %></p>
+        </div>
+        <div class="row-card-title-section-col-r">
+        <p>Some text</p>
+        <p>Return date</p>
+        <p>end<%#= booking.return_date %></p>
+        </div>
+      </div>
+      <%= image_tag "default_no_image" %>
+      <div class="card-infos-section">
+        <p>$<%= booking.item.price %></p>
+        <p class="text single-line"><%= booking.item.description %></p>
+      </div>
+      <div class="card-btn-details">
+        <%= link_to 'More Details', item_path(booking.item), class: "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+</div>
