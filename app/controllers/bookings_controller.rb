@@ -31,7 +31,12 @@ class BookingsController < ApplicationController
 
   def update
     @booking.update(booking_params)
-    redirect_to root_path(@booking)
+    redirect_to requests_path
+  end
+
+  def requests
+    bookings = Booking.all
+    @bookings = bookings.joins(:item).where(items: { user: current_user })
   end
 
   private

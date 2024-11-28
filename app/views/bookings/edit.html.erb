@@ -1,7 +1,5 @@
 <h1><%= @booking.item.title %></h1>
 <h2><%= @booking.status %></h2>
-<h3>Owner is <%= @booking.item.user.first_name %></h3>
-<h3><%= @booking.user.first_name %> wants to request your item</h3>
 <%= simple_form_for [@item, @booking] do |f| %>
   <%= f.input :status, :collection => %w[Approved Refused] %>
 
