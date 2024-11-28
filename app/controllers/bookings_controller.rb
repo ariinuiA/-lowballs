@@ -3,7 +3,7 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: %i[edit update]
 
   def my_bookings
-    @booking = Booking.all
+    @booking = Booking.
   end
 
   def my_rented_items
