@@ -4,7 +4,23 @@
 just the items that were booked from other people. %>
 
 <%#   %>
-<% booked = ["#{@booking}"] %>
-<h1>My bookings</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>My bookings</h1>
+  <ul>
+    <% @bookings.each do |booking| %>
+      <li><%= booking.item.title %></li>
+      <li><%= booking.item.description %></li>
+      <li><%= booking.item.price %></li>
+    <% end %>
 
-<%= booked.each %>
+  </ul>
+
+</body>
+</html>
