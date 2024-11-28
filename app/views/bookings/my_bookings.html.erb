@@ -4,7 +4,7 @@
 just the items that were booked from other people. %>
 
 <%#   %>
+<% booked = ["#{@booking}"] %>
 <h1>My bookings</h1>
-<% @booking.each do |booking|%>
-  <%=booking.status %>
-<% end %>
+
+<%= booked.each %>
