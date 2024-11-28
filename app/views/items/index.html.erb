@@ -6,9 +6,11 @@
         <div class="card-title-section-col-l"><%= item.title %></div>
         <div class="card-title-section-col-r"><p>Some text</p></div>
       </div>
-      <%= image_tag "default_no_image" %>
+      <div class="d-flex justify-content-center align-items-center">
+        <%= image_tag "default_no_image" %>
+      </div>
       <div class="card-infos-section">
-        <p>$<%= item.price %></p>
+        <p class="card-txt-price">$<%= item.price %></p>
         <p class="text single-line"><%= item.description %></p>
       </div>
       <div class="card-btn-details">
