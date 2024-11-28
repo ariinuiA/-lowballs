@@ -3,6 +3,7 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: %i[edit update]
 
   def my_bookings
+    @bookings = Booking.where(user: current_user)
   end
 
   def my_rented_items
