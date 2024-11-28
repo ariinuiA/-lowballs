@@ -11,15 +11,15 @@ just the items that were booked from other people. %>
   <% @bookings.each do |booking| %>
     <div class="card-container">
       <div class="card-title-section">
-        <div class="row-card-title-section-col-l">
+        <div class="card-title-section-col-l">
           <p><%= booking.item.title %></p>
           <p>Renting date</p>
-          <p>start<%#= booking.booking_date %></p>
+          <p><%= booking.booking_date %></p>
         </div>
-        <div class="row-card-title-section-col-r">
+        <div class="card-title-section-col-r">
         <p>Some text</p>
         <p>Return date</p>
-        <p>end<%#= booking.return_date %></p>
+        <p><%= booking.return_date %></p>
         </div>
       </div>
       <%= image_tag "default_no_image" %>
