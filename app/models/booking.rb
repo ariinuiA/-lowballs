@@ -7,7 +7,7 @@ class Booking < ApplicationRecord
   private
 
   def item_not_owned_by_user
-    if item.user_id == user_id
+    if item.present? && item.user == user
       errors.add(:item, "You cannot book your own item.")
     end
   end

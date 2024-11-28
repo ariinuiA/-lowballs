@@ -10,9 +10,10 @@ Rails.application.routes.draw do
   # The user will need to see the items that he has rented from other people, this route will provide the user with the correct path.
   get "my_rented_items" => "bookings#my_rented_items"
 
-  resources :items, only: %i[new index show] do
+  resources :items, only: %i[new create index show] do
     resources :bookings, only: %i[new create]
   end
 
   resources :bookings, only: %i[edit update]
+  get "requests", to: "bookings#requests"
 end

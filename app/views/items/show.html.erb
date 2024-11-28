@@ -9,6 +9,11 @@
 <p>
   <strong>Price:</strong> <%= number_to_currency(@item.price.to_f / 100, unit: "$") %>
 </p>
+<p>
+  <strong>Owner:</strong> <%= @item.user.first_name %> <%= @item.user.last_name %>
+</p>
 
-<%= link_to 'Back to Items', items_path %> |
-<%= link_to 'Book item', new_item_booking_path(@item) %>
+<%= link_to 'Back to Items', items_path %>
+<% unless @item.user == current_user %>
+| <%= link_to 'Book item', new_item_booking_path(@item) %>
+<% end %>

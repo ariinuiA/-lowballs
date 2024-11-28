@@ -1,0 +1,19 @@
+<div class="container">
+  <h1 class="mt-5">Pending requests...</h1>
+  <% @bookings.each do |booking| %>
+    <div class="notification">
+
+      <%= image_tag("default_avatar.png", class: "avatar-large") %>
+      <div class="notification-content">
+        <p><small><%= booking.user.first_name %></small></p>
+        <p>Wants to book your item: <%= booking.item.title %></p>
+      </div>
+
+      <div class="notification-actions">
+        <%= link_to edit_booking_path(booking), class: "text-decoration-none" do %>
+         Edit <i class="fas fa-pencil-alt"></i>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
