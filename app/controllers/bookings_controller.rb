@@ -7,7 +7,7 @@ class BookingsController < ApplicationController
   end
 
   def my_rented_items
-    @booking
+    @items = current_user.items
   end
 
   def new
