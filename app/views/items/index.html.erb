@@ -1,24 +1,19 @@
 <h1>Items Listing</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Price</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @items.each do |item| %>
-      <tr>
-        <td><%= item.title %></td>
-        <td><%= item.description %></td>
-        <td><%= number_to_currency(item.price.to_f / 100, unit: "$") %></td>
-        <td>
-          <%= link_to 'Item Details', item_path(item) %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-
-</table>
+<div class="container d-flex flex-wrap justify-content-center align-items-center">
+  <% @items.each do |item| %>
+    <div class="card-container">
+      <div class="card-title-section">
+        <div class="card-title-section-col-l"><%= item.title %></div>
+        <div class="card-title-section-col-r"><p>Some text</p></div>
+      </div>
+      <%= image_tag "default_no_image" %>
+      <div class="card-infos-section">
+        <p>$<%= item.price %></p>
+        <p class="text single-line"><%= item.description %></p>
+      </div>
+      <div class="card-btn-details">
+        <%= link_to 'More Details', item_path(item), class: "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+</div>
