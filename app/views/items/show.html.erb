@@ -9,7 +9,7 @@
         <div class="card-title-section-col-r"><p>Status</p></div>
       </div>
       <div class="test">
-        <%= image_tag "default_no_image" %>
+        <%= image_tag(@item.photo.attached? ? cl_image_path(@item.photo.key) : asset_path('default_no_image.jpg')) %>
       </div>
       <div class="card-infos-section">
         <div class="card-txt-price">$<%= @item.price %></div>
