@@ -7,7 +7,7 @@
       <div class="card-title-section">
         <div class="card-title-section-col-l"><%= @item.title %></div>
       </div>
-      <div class="test">
+      <div class="card-img test">
         <%= image_tag(@item.photo.attached? ? cl_image_path(@item.photo.key) : asset_path('default_no_image.jpg')) %>
       </div>
       <div class="card-infos-section">
