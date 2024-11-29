@@ -8,6 +8,7 @@ class BookingsController < ApplicationController
 
   def my_rented_items
     @items = current_user.items
+    @booking = Booking.where(item: params[:item_id])
   end
 
   def new
@@ -27,6 +28,7 @@ class BookingsController < ApplicationController
   end
 
   def edit
+    @item = Item.find(params[:id])
   end
 
   def update
