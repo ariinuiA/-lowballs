@@ -27,7 +27,9 @@ just the items that were booked from other people. %>
           <%= booking.return_date %>
         </div>
       </div>
-      <%= image_tag "default_no_image" %>
+      <div class="d-flex justify-content-center align-items-center">
+        <%= image_tag(booking.item.photo.attached? ? cl_image_path(booking.item.photo.key) : asset_path('default_no_image.jpg')) %>
+      </div>
       <div class="card-infos-section">
         <p class="card-txt-price">$<%= booking.item.price %></p>
         <p class="text single-line"><%= booking.item.description %></p>
