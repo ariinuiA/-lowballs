@@ -1,22 +1,33 @@
 .banner {
-  background-size: cover;
-  background-position: center;
-  padding: 150px 0;
-  background-color: grey;
-}
+
+    background-image:
+      linear-gradient(rgba(40, 55, 90, 0.5), rgba(40, 55, 90, 0.5)),
+      url('https://res.cloudinary.com/diwuyv3c8/image/upload/v1732900819/galen-crout-MvkyyiZy1JQ-unsplash_yrt2qe.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; /* Prevent repeating */
+    padding: 150px 0;
+    color: white;
+  }
+
+
+
 
 .banner h1 {
   margin: 0;
   color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-family: "Nunito Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
   font-size: 64px;
-  letter-spacing: 3px;
-  font-weight: bold;
+
 }
 
 .banner p {
-  font-size: 40px;
-  color: white;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-family: "Nunito Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 28px;
 }
