@@ -5,6 +5,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @booking = Booking.find_by(user: current_user, item: @item)
   end
 
   def new

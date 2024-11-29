@@ -1,55 +1,22 @@
-<body>
 <div class="container">
   <div class="card-top-container">
-  <h2>Request to book</h2>
+    <h2>Request to book</h2>
   </div>
 
-<%= simple_form_for [@item, @booking], html: { class: "custom-form" } do |f| %>
-  <div class="custom-date-field">
+  <%= simple_form_for [@item, @booking], html: { class: "custom-form" } do |f| %>
+    <div class="custom-date-field">
+      <div class="form-row">
+        <div class="date-part">
+          <%= f.input :booking_date, as: :date, label: "Booking Date" %>
+        </div>
+      </div>
 
-  <%= f.label :booking_date, "Booking Date", class: "h5" %>
-
-  <div class="date-input-group">
-<div class="form-row">
-  <div class="date-part">
-    <label for="booking_date_1i" class="custom-label">Year</label>
-    <%= f.select :booking_date, (Date.today.year..(Date.today.year + 5)).to_a, {}, class: "custom-input" %>
-  </div>
-  <div class="date-part">
-    <label for="booking_date_2i" class="custom-label">Month</label>
-    <%= f.select :booking_date, (1..12).to_a, {}, class: "custom-input" %>
-  </div>
-  <div class="date-part">
-    <label for="booking_date_3i" class="custom-label">Day</label>
-    <%= f.select :booking_date, (1..31).to_a, {}, class: "custom-input" %>
-  </div>
+      <div class="form-row">
+        <div class="date-part">
+          <%= f.input :return_date, as: :date, label: "Return Date" %>
+        </div>
+      </div>
+      <%= f.button :submit, "Submit Booking",class: "custom-button" %>
+    </div>
+  <% end %>
 </div>
-
-
- <%= f.label :booking_date, "Return Date", class: "h5" %>
-
-  <div class="date-input-group">
-<div class="form-row">
-  <div class="date-part">
-    <label for="booking_date_1i" class="custom-label">Year</label>
-    <%= f.select :booking_date, (Date.today.year..(Date.today.year + 5)).to_a, {}, class: "custom-input" %>
-  </div>
-  <div class="date-part">
-    <label for="booking_date_2i" class="custom-label">Month</label>
-    <%= f.select :booking_date, (1..12).to_a, {}, class: "custom-input" %>
-  </div>
-  <div class="date-part">
-    <label for="booking_date_3i" class="custom-label">Day</label>
-    <%= f.select :booking_date, (1..31).to_a, {}, class: "custom-input" %>
-  </div>
-</div>
-
-
-</div>
-  <%= f.button :submit,
-   "Submit Booking",
-  class: "custom-button" %>
-<% end %>
-
-
-</body>

@@ -6,7 +6,6 @@
   <div class="card-info-product">
       <div class="card-title-section">
         <div class="card-title-section-col-l"><%= @item.title %></div>
-        <div class="card-title-section-col-r"><p>Status</p></div>
       </div>
       <div class="test">
         <%= image_tag(@item.photo.attached? ? cl_image_path(@item.photo.key) : asset_path('default_no_image.jpg')) %>
@@ -26,7 +25,13 @@
         </div>
       </div>
       <div class="card-btn-details">
-        <%= link_to 'Book item', new_item_booking_path(@item), class: "btn btn-primary" %>
+        <% unless @item.user == current_user%>
+          <% if @booking%>
+          <%= link_to 'Pending...', new_item_booking_path(@item), class: "btn btn-primary disabled" %>
+          <% else %>
+            <%= link_to 'Book item', new_item_booking_path(@item), class: "btn btn-primary" %>
+          <% end %>
+        <% end %>
       </div>
     </div>
 </div>
