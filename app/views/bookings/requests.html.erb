@@ -9,11 +9,17 @@
         <p>Wants to book your item: <%= booking.item.title %></p>
       </div>
 
-      <div class="notification-actions">
-        <%= link_to edit_booking_path(booking), class: "text-decoration-none" do %>
-         Edit <i class="fas fa-pencil-alt"></i>
-        <% end %>
-      </div>
+      <% if booking.status == "pending" %>
+        <div class="notification-actions">
+          <%= link_to edit_booking_path(booking), class: "text-decoration-none" do %>
+            Edit <i class="fas fa-pencil-alt"></i>
+          <% end %>
+        </div>
+      <% else %>
+        <div class="d-flex justify-content-end">
+          <%= booking.status %>
+        </div>
+      <% end %>
     </div>
   <% end %>
 </div>

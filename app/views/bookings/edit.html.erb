@@ -1,7 +1,11 @@
-<h1><%= @booking.item.title %></h1>
-<h2><%= @booking.status %></h2>
-<%= simple_form_for [@item, @booking] do |f| %>
-  <%= f.input :status, :collection => %w[Approved Refused] %>
-
-  <%= f.button :submit, "Submit Booking" %>
-<% end %>
+<div class="container">
+  <div class="card-top-container">
+    <h2><%= @booking.user.first_name %> <%= @booking.user.last_name %> wants to book <%= @booking.item.title %></h2>
+  </div>
+  <div class="form-container">
+    <%= simple_form_for [@item, @booking], html: { class: "custom-form" } do |f| %>
+      <%= f.input :status, :collection => %w[Approved Rejected] %>
+      <%= f.button :submit, "Submit Booking" %>
+    <% end %>
+  </div>
+</div>
