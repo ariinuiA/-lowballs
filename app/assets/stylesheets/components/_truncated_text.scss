@@ -1,6 +1,12 @@
 .text.single-line {
-  width: 428px;
+  width: 326px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  font-family: "Nunito Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  color: #28375A;
 }
