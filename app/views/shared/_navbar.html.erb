@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to items_path, class: "navbar-brand" do %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+      <%= image_tag "https://res.cloudinary.com/diwuyv3c8/image/upload/v1732902047/lb_logo_j3tvua.svg" %>
 
     <% end %>
 
@@ -20,8 +20,10 @@
 
       <!-- Dropdown for "Renter" -->
       <li class="nav-item dropdown">
+      <i class="bi bi-chevron-down"></i>
         <% if user_signed_in? %>
                 <li class="nav-item dropdown">
+
         <%= link_to "Renter", my_rented_items_path, class: "nav-link dropdown-toggle", data: { bs_toggle: "dropdown" }, aria: { haspopup: "true", expanded: "false" } %>
         <ul class="dropdown-menu dropdown-menu-end">
           <li>
