@@ -25,7 +25,13 @@
         </div>
       </div>
       <div class="card-btn-details">
-        <%= link_to 'Book item', new_item_booking_path(@item), class: "btn btn-primary" %>
+        <% unless @item.user == current_user%>
+          <% if @booking%>
+          <%= link_to 'Pending...', new_item_booking_path(@item), class: "btn btn-primary disabled" %>
+          <% else %>
+            <%= link_to 'Book item', new_item_booking_path(@item), class: "btn btn-primary" %>
+          <% end %>
+        <% end %>
       </div>
     </div>
 </div>
