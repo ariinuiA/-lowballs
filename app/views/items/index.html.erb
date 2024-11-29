@@ -7,7 +7,7 @@
         <div class="card-title-section-col-r"><p>Some text</p></div>
       </div>
       <div class="d-flex justify-content-center align-items-center">
-        <%= image_tag "default_no_image" %>
+        <%= image_tag(item.photo.attached? ? cl_image_path(item.photo.key) : asset_path('default_no_image.jpg')) %>
       </div>
       <div class="card-infos-section">
         <p class="card-txt-price">$<%= item.price %></p>

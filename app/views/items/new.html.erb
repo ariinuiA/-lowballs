@@ -1,11 +1,17 @@
-<div>
-<h3>Add a new item</h3>
- <%= simple_form_for(@item) do |f| %>
-  <%= f.input :title, { class: "form-control" } %>
-  <%= f.input :description, { class: "form-control" } %>
-  <%= f.input :price, as: :integer, input_html: { min: 0, step: 1, class: "form-control" } %>
+<div class="container">
+  <div class="card-top-container">
+    <h2>Add a new item</h2>
+  </div>
+  <div class="form-container">
+    <%= simple_form_for(@item) do |f| %>
+      <%= f.input :title, input_html: { class: "form-input" } %>
+      <%= f.input :description, as: :text, input_html: { class: 'form-input' } %>
+      <div class="form-group">
+        <%= f.input :photo, as: :file %>
+    </div>
+      <%= f.input :price, as: :integer, input_html: { min: 0, step: 1, class: "form-input" } %>
 
-  <%= f.submit class: "btn btn-primary" %>
-<% end %>
-
+      <%= f.submit "Add Item", class: "btn btn-primary" %>
+    <% end %>
+  </div>
 </div>
