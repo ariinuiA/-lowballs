@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="card-top-container">
+    <h1>Editing <%= @item.title %></h1>
+  </div>
+  <div class="form-container">
+    <%= simple_form_for(@item) do |f| %>
+      <%= f.input :title, input_html: { class: "form-input" } %>
+      <%= f.input :description, as: :text, input_html: { class: 'form-input' } %>
+      <div class="form-group">
+        <%= f.input :photo, as: :file %>
+    </div>
+      <%= f.input :price, as: :integer, input_html: { min: 0, step: 1, class: "form-input" } %>
+
+      <%= f.submit "Confirm changes", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

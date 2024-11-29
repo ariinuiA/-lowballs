@@ -1,15 +1,32 @@
 <div class="banner">
   <div class="container">
-    <h1>My lendables</h1>
+    <h1>My items</h1>
     <p>List of items I’m currently offering out to others.</p>
   </div>
 </div>
-<ul>
-  <li>
-    <% @items.each do |item| %>
-      <li><%= item.title %></li>
-      <!--li><%= item.description %></li-->
-      <li><%= item.price %></li>
-    <% end %>
-  </li>
-</ul>
+
+<div class="container d-flex flex-wrap justify-content-center align-items-center">
+  <% @items.each do |item| %>
+    <div class="card-container">
+      <div class="card-title-section">
+        <div class="card-title-section-col-l">
+          <p><%= item.title %></p>
+        </div>
+        <!--div class="card-title-section-col-r">
+        <p>Some text</p>
+        <p>Return date</p>
+        <p><#%= booking.return_date %></p>
+        </div-->
+      </div>
+      <%= image_tag "default_no_image" %>
+      <div class="card-infos-section">
+        <p class="card-txt-price">$<%= item.price %></p>
+        <p class="text single-line"><%= item.description %></p>
+      </div>
+      <div class="card-btn-details">
+        <%= link_to 'Edit', edit_item_path(item), class: "btn btn-primary" %>
+
+      </div>
+    </div>
+  <% end %>
+</div>
